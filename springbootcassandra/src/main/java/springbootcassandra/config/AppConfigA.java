@@ -1,9 +1,9 @@
 package springbootcassandra.config;
 
-import springbootcassandra.domain.ServiceA;
-import springbootcassandra.domain.ServiceB;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import springbootcassandra.domain.ServiceA;
+import springbootcassandra.domain.ServiceB;
 
 @Configuration
 public class AppConfigA {

@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>springbootcassandra</module>
+        <module>springbootredis</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

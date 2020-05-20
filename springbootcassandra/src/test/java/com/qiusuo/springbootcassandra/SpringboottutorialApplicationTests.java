@@ -2,15 +2,15 @@ package com.qiusuo.springbootcassandra;
 
 import com.datastax.driver.core.utils.UUIDs;
 import com.google.common.collect.ImmutableSet;
-import springbootcassandra.persistence.cassandra.model.Book;
-import springbootcassandra.persistence.cassandra.repository.BookRepository;
-import springbootcassandra.persistence.services.BookService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.cassandra.core.mapping.BasicMapId;
 import org.springframework.data.cassandra.core.mapping.MapId;
 import org.springframework.transaction.annotation.Transactional;
+import springbootcassandra.persistence.cassandra.model.Book;
+import springbootcassandra.persistence.cassandra.repository.BookRepository;
+import springbootcassandra.persistence.services.BookService;
 
 import java.util.List;
 import java.util.Optional;

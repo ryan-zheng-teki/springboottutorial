@@ -1,9 +1,9 @@
 package springbootcassandra.persistence.services;
 
-import springbootcassandra.persistence.cassandra.model.Book;
-import springbootcassandra.persistence.cassandra.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import springbootcassandra.persistence.cassandra.model.Book;
+import springbootcassandra.persistence.cassandra.repository.BookRepository;
 
 import java.util.List;
 
