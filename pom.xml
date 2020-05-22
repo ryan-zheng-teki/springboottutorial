@@ -6,6 +6,8 @@
     <modules>
         <module>springbootcassandra</module>
         <module>springbootredis</module>
+        <module>springbootrabbitmq</module>
+        <module>springbootwebsocket</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

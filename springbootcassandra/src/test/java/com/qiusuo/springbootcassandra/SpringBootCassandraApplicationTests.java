@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 @Transactional
-class SpringboottutorialApplicationTests {
+class SpringBootCassandraApplicationTests {
 
     @Autowired
     private BookService bookService;
