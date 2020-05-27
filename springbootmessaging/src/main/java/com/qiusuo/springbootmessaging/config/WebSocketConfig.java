@@ -22,7 +22,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
+        registry.enableStompBrokerRelay("/topic", "/queue");
         registry.setApplicationDestinationPrefixes("/app");
-        registry.enableSimpleBroker("/topic","/queue");
     }
 }
