@@ -8,6 +8,7 @@
         <module>springbootredis</module>
         <module>springbootrabbitmq</module>
         <module>springbootwebsocket</module>
+        <module>springbootmessaging</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -88,11 +89,7 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-cassandra</artifactId>
-            <version>2.2.6.RELEASE</version>
-        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.datastax.oss/java-driver-core -->
 
         <!-- https://mvnrepository.com/artifact/io.dropwizard.metrics/metrics-core -->
@@ -104,6 +101,14 @@
             <artifactId>spring-boot-gradle-plugin</artifactId>
             <version>2.2.6.RELEASE</version>
             <type>pom</type>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>2.3.0.RELEASE</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
