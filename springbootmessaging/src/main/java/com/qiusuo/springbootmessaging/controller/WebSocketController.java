@@ -5,6 +5,7 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
+import org.springframework.messaging.simp.annotation.SubscribeMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -21,5 +22,10 @@ public class WebSocketController {
 
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
         return chatMessage;
+    }
+
+    @SubscribeMapping("/topic/publicChatRoom")
+    public String try1() {
+        return  "HelloWorld";
     }
 }

@@ -1,5 +1,11 @@
 version: "3.7"
 services:
+  redis:
+    container_name: 'qiusuo-redis'
+    image: 'redis:latest'
+    ports:
+      - "6379:6379"
+
   rocketmq-stomp:
     build: .
     image: rocketmq-stomp:v1
