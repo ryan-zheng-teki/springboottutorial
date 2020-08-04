@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   redis:
-    container_name: 'qiusuo-redis'
+    container_name: 'qiusuo-redis-chat'
     image: 'redis:latest'
     ports:
       - "6379:6379"
@@ -9,7 +9,7 @@ services:
   rocketmq-stomp:
     build: .
     image: rocketmq-stomp:v1
-    container_name: rabbitmq
+    container_name: rabbitmq-chat
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -18,4 +18,4 @@ services:
 networks:
   default:
     external:
-      name: dev_qiusuo-cluster
+      name: dev-qiusuo-cluster

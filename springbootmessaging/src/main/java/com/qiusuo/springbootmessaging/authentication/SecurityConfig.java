@@ -3,6 +3,11 @@ package com.qiusuo.springbootmessaging.authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.MessageHandler;
+import org.springframework.messaging.support.ExecutorSubscribableChannel;
+import org.springframework.messaging.support.MessageHandlingRunnable;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -11,6 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
+
+import java.util.Iterator;
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -46,7 +53,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("jiawen").password(passwordEncoder().encode("123")).roles("ADMIN");
     }
-
 
     @Bean
     public LogoutSuccessHandler logoutSuccessHandler() {

@@ -1,6 +1,7 @@
 package com.qiusuo.springbootmessaging.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -20,6 +21,12 @@ public class WebSocketConfig extends AbstractSessionWebSocketMessageBrokerConfig
     @Autowired
     private SessionRepositoryMessageInterceptor sessionRepositoryMessageInterceptor;
 
+    @Value("${qiusuo.relay.host}")
+    private String relayHost;
+
+    @Value("${qiusuo.relay.port}")
+    private Integer relayPort;
+
     @Override
     protected void configureStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/ws").withSockJS().setInterceptors(handshakeInterceptor,sessionRepositoryMessageInterceptor);
@@ -27,7 +34,9 @@ public class WebSocketConfig extends AbstractSessionWebSocketMessageBrokerConfig
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/queue/", "/topic/");
+        registry.enableStompBrokerRelay("/queue/", "/topic/")
+                .setRelayHost(relayHost)
+                .setRelayPort(relayPort);
         registry.setApplicationDestinationPrefixes("/app");
     }
 
