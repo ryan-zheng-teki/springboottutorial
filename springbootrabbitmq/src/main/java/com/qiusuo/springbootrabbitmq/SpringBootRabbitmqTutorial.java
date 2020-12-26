@@ -47,8 +47,6 @@ public class SpringBootRabbitmqTutorial {
     }
 
     public static void main(String[] args)  {
-
-
         SpringApplication.run(SpringBootRabbitmqTutorial.class, args);
     }
 }

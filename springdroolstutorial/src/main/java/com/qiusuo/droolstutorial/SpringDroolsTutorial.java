@@ -31,7 +31,7 @@ public class SpringDroolsTutorial {
 
         WorkingMemory workingMemory = ruleBase.newStatefulSession();
 
-        Product product = new Product();ls
+        Product product = new Product();
                 
         product.setType("gold");
 
