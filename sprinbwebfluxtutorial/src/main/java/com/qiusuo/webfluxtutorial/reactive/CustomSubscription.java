@@ -1,5 +1,6 @@
 package com.qiusuo.webfluxtutorial.reactive;
 
+import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 import reactor.core.CoreSubscriber;
 
@@ -9,9 +10,9 @@ import reactor.core.CoreSubscriber;
  */
 public class CustomSubscription implements Subscription {
     Boolean cancelled;
-    final CoreSubscriber<String> actual;
+    final Subscriber<Integer> actual;
 
-    public CustomSubscription(CoreSubscriber<String> actual) {
+    public CustomSubscription(Subscriber<Integer> actual) {
         this.actual = actual;
         this.cancelled = false;
     }
@@ -23,7 +24,7 @@ public class CustomSubscription implements Subscription {
     @Override
     public void request(long var1) {
         if(cancelled == false) {
-            actual.onNext("Hello, I am sending data to subscriber");
+            actual.onNext(12);
         }
         return ;
     }
