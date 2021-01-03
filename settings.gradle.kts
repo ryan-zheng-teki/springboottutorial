@@ -10,5 +10,5 @@ include("springbootwebsocket")
 include("springbootmessaging")
 include("springdroolstutorial")
 include("RMITutorial")
-include("sprinbwebfluxtutorial")
+include("springwebfluxtutorial")
 

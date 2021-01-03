@@ -14,16 +14,12 @@ allprojects {
 }
 
 
-ext {
-    set('springCloudVersion', "Hoxton.SR8")
-}
+val springCloudVersion by extra("Hoxton.SR8")
 
 subprojects {
-    plugins {
-        java
-        `maven-publish`
-        `org.springframework.boot`
-        `io.spring.dependency-management`
+    apply {
+        plugin("org.springframework.boot")
+        plugin("io.spring.dependency-management")
     }
 
     //this will import the cloud dependencies bom. This mimics the maven dependency management
