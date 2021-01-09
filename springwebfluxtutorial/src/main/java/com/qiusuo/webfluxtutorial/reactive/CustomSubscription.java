@@ -9,10 +9,11 @@ import reactor.core.CoreSubscriber;
  * It might schedule the data into different threads.
  */
 public class CustomSubscription implements Subscription {
-    Boolean cancelled;
-    final Subscriber<Integer> actual;
+    private Boolean cancelled;
+    private final Subscriber<String> actual;
+    private String myValue;
 
-    public CustomSubscription(Subscriber<Integer> actual) {
+    public CustomSubscription(Subscriber<String> actual) {
         this.actual = actual;
         this.cancelled = false;
     }
@@ -24,7 +25,7 @@ public class CustomSubscription implements Subscription {
     @Override
     public void request(long var1) {
         if(cancelled == false) {
-            actual.onNext(12);
+            actual.onNext(myValue);
         }
         return ;
     }
