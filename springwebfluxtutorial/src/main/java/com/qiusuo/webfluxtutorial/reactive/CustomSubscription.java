@@ -6,16 +6,18 @@ import reactor.core.CoreSubscriber;
 
 /**
  * The reason to create custom subscription is that subscription takes the responsiblitly of scheduling as well
- * It might schedule the data into different threads.
+ * It might schedule the data into different threads. Normally when the subscription
+ * is being created, it knows how to use the publisher to get data.
  */
 public class CustomSubscription implements Subscription {
     private Boolean cancelled;
     private final Subscriber<String> actual;
-    private String myValue;
+    private String value;
 
-    public CustomSubscription(Subscriber<String> actual) {
+    public CustomSubscription(Subscriber<String> actual, String value) {
         this.actual = actual;
         this.cancelled = false;
+        this.value = value;
     }
 
     /**
@@ -25,7 +27,7 @@ public class CustomSubscription implements Subscription {
     @Override
     public void request(long var1) {
         if(cancelled == false) {
-            actual.onNext(myValue);
+            actual.onNext(value);
         }
         return ;
     }

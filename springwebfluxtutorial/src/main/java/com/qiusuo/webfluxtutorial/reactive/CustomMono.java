@@ -9,14 +9,20 @@ import reactor.core.CoreSubscriber;
  *
  */
 public class CustomMono implements CorePublisher {
+    private String value;
+
+    public CustomMono(String value) {
+        this.value = value;
+    }
+
     @Override
     public void subscribe(Subscriber subscriber) {
-        subscriber.onSubscribe(new CustomSubscription(subscriber));
+        subscriber.onSubscribe(new CustomSubscription(subscriber, value));
     }
 
     @Override
     public void subscribe(CoreSubscriber subscriber) {
-        subscriber.onSubscribe(new CustomSubscription(subscriber));
+        subscriber.onSubscribe(new CustomSubscription(subscriber, value));
     }
 
     public CustomMonoOperator map(Operator operator) {

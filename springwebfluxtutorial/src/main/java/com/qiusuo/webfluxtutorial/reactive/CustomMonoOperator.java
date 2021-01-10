@@ -1,6 +1,5 @@
 package com.qiusuo.webfluxtutorial.reactive;
 
-import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import reactor.core.CorePublisher;
 import reactor.core.CoreSubscriber;
@@ -26,7 +25,10 @@ public class CustomMonoOperator implements OptimizableOperator {
 
     @Override
     public void subscribe(CoreSubscriber subscriber) {
-
+        if(source != null) {
+            CachingSubscriber cachingSubscriber = new CachingSubscriber(subscriber);
+            source.subscribe(cachingSubscriber);
+        }
     }
 
     @Override
