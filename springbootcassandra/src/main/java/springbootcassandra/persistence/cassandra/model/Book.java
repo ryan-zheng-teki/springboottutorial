@@ -1,6 +1,6 @@
 package springbootcassandra.persistence.cassandra.model;
 
-import com.datastax.driver.core.DataType;
+import com.datastax.oss.driver.api.core.type.DataType;
 import org.springframework.data.cassandra.core.cql.Ordering;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.CassandraType;
@@ -13,8 +13,6 @@ import java.util.UUID;
 
 @Table
 public class Book {
-
-    @CassandraType(type = DataType.Name.TIMEUUID)
     @PrimaryKeyColumn(
             name = "isbn",
             ordinal = 2,

@@ -4,6 +4,9 @@ import org.reactivestreams.Subscriber;
 import reactor.core.CorePublisher;
 import reactor.core.CoreSubscriber;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  *
@@ -13,6 +16,10 @@ public class CustomMono implements CorePublisher {
 
     public CustomMono(String value) {
         this.value = value;
+    }
+
+    List<String> requestDB() {
+        return new ArrayList<String>();
     }
 
     @Override

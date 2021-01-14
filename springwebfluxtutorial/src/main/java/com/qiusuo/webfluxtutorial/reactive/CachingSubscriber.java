@@ -17,6 +17,7 @@ public class CachingSubscriber implements Subscriber<String>, Subscription {
 
     public CachingSubscriber(Subscriber<String> next) {
         this.next = next;
+        queuedEntities = new LinkedList<String>();
     }
 
     @Override
@@ -28,7 +29,6 @@ public class CachingSubscriber implements Subscriber<String>, Subscription {
     @Override
     public void onNext(String s) {
         queuedEntities.add(s);
-
         if(queuedEntities.size() == 4) {
             next.onNext(operator.operate(s));
         }

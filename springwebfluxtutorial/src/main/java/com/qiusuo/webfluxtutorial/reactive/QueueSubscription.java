@@ -11,7 +11,7 @@ public class QueueSubscription implements Subscription {
     private Subscription parent;
     private Subscriber<String> subscriber;
 
-    public QueueSubscription() {
+    public QueueSubscription(Subscriber subscriber) {
         queuedEntities = new LinkedList<>();
     }
     @Override
