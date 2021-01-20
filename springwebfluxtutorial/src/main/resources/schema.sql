@@ -1,0 +1,1 @@
+CREATE TABLE book (iso_number VARCHAR(255) PRIMARY KEY, title VARCHAR(255));
