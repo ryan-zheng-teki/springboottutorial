@@ -1,6 +1,5 @@
 plugins {
-    id 'java'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+    java
 }
 
 group 'com.qiusuo'
@@ -10,7 +9,7 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib")
     testCompile("junit:junit:4.12")
 }
