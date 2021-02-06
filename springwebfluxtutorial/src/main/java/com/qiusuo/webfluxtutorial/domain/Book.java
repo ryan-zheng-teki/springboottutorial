@@ -1,14 +1,13 @@
 package com.qiusuo.webfluxtutorial.domain;
 
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book {
-    public Book(String isoNumber, String title) {
-        this.isoNumber = isoNumber;
-        this.title = title;
-    }
-
     @Id
     private String isoNumber;
     private String title;

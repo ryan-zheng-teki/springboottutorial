@@ -18,6 +18,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer;
 import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator;
+import reactor.core.publisher.Hooks;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -27,6 +28,7 @@ public class SpringWebFluxTutorial {
     private static final Logger logger = LoggerFactory.getLogger(SpringWebFluxTutorial.class);
     public static void main(String[] args) {
         SpringApplication.run(SpringWebFluxTutorial.class, args);
+        Hooks.onOperatorDebug();
     }
 
     @Bean
