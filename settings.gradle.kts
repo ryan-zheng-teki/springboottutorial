@@ -11,4 +11,4 @@ include("springbootmessaging")
 include("springdroolstutorial")
 include("RMITutorial")
 include("springwebfluxtutorial")
-
+include("springbootkafkatutorial")
