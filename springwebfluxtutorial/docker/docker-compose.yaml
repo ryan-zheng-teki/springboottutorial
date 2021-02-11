@@ -2,6 +2,7 @@ version: '3'
 services:
   database:
     image: "postgres" # use latest official postgres version
+    container_name: qiusuo-postgres
     environment:
       POSTGRES_USER: qiusuo
       POSTGRES_PASSWORD: qiusuo

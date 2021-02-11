@@ -1,11 +1,7 @@
 package com.qiusuo.webfluxtutorial;
 
-import com.qiusuo.webfluxtutorial.domain.Book;
-import com.qiusuo.webfluxtutorial.repository.BookRepository;
 import io.r2dbc.spi.ConnectionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -14,14 +10,11 @@ import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer;
 import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator;
 import reactor.core.publisher.Hooks;
 
-import java.time.Duration;
-import java.util.Arrays;
+import javax.annotation.PreDestroy;
 
-
+@Slf4j
 @SpringBootApplication
 public class SpringWebFluxTutorial {
-    private static final Logger logger = LoggerFactory.getLogger(SpringWebFluxTutorial.class);
-
     public static void main(String[] args) {
         SpringApplication.run(SpringWebFluxTutorial.class, args);
         Hooks.onOperatorDebug();
@@ -33,21 +26,20 @@ public class SpringWebFluxTutorial {
         ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
         initializer.setConnectionFactory(connectionFactory);
         initializer.setDatabasePopulator(new ResourceDatabasePopulator(new ClassPathResource("schema.sql")));
-
+        initializer.setDatabaseCleaner(new ResourceDatabasePopulator(new ClassPathResource("schemaCleaner.sql")));
         return initializer;
     }
 
-    @Bean
-    public CommandLineRunner demo(BookRepository bookRepository) {
-        return (args) -> {
-            bookRepository.saveAll(Arrays.asList(
-                    new Book("iso2343", "machine learning"),
-                    new Book("iso2344", "java"),
-                    new Book("iso2345", "javascript"),
-                    new Book("iso2346", "typescript")))
-                    .blockLast(Duration.ofSeconds(10));
-            logger.info("Customers found with findAll():");
-        };
+    @PreDestroy
+    public void onExit() {
+        log.info("###STOPing###");
+        try {
+            Thread.sleep(5 * 1000);
+        } catch (InterruptedException e) {
+            log.error("", e);
+            ;
+        }
+        log.info("###STOP FROM THE LIFECYCLE###");
     }
 
 }
