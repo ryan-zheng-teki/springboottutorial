@@ -8,7 +8,7 @@ repositories {
 }
 
 val lombokVersion = "1.18.12"
-val LIB_GRAPHQL_SPRING_BOOT_VER = "8.1.1-SNAPSHOT"
+val LIB_GRAPHQL_SPRING_BOOT_VER = "11.0.0"
 
 dependencies {
     // Lombok

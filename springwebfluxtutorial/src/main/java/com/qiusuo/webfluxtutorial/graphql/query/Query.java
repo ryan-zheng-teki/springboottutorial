@@ -2,6 +2,7 @@ package com.qiusuo.webfluxtutorial.graphql.query;
 
 import com.qiusuo.webfluxtutorial.domain.Book;
 import com.qiusuo.webfluxtutorial.service.BookService;
+import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 
