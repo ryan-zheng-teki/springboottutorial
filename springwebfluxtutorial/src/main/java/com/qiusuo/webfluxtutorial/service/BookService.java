@@ -18,7 +18,7 @@ public class BookService {
     }
 
     public Mono<Book> createBook(String isoNumber, String title) {
-        Book book = new Book(isoNumber, title);
+        Book book = new Book(isoNumber, title, true);
         return this.bookRepository.save(book);
     }
     
