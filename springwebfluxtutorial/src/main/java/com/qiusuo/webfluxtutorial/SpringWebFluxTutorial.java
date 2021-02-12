@@ -9,6 +9,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer;
 import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator;
 import reactor.core.publisher.Hooks;
+import reactor.tools.agent.ReactorDebugAgent;
 
 import javax.annotation.PreDestroy;
 
@@ -16,8 +17,8 @@ import javax.annotation.PreDestroy;
 @SpringBootApplication
 public class SpringWebFluxTutorial {
     public static void main(String[] args) {
+        ReactorDebugAgent.init();
         SpringApplication.run(SpringWebFluxTutorial.class, args);
-        Hooks.onOperatorDebug();
     }
 
     @Bean

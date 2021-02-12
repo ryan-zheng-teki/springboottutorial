@@ -6,6 +6,8 @@ import graphql.kickstart.tools.GraphQLMutationResolver;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
+import java.util.concurrent.CompletableFuture;
+
 @Component
 public class Mutation implements GraphQLMutationResolver {
     private BookService bookService;
@@ -14,8 +16,8 @@ public class Mutation implements GraphQLMutationResolver {
         this.bookService = bookService;
     }
 
-    Mono<Book> createBook(String isoNumber, String title) {
-        return this.bookService.createBook(isoNumber, title);
+    public CompletableFuture<Book> createBook(String isoNumber, String title) {
+        return this.bookService.createBook(isoNumber, title).toFuture();
     }
 }
 

@@ -24,6 +24,8 @@ dependencies {
     implementation("com.graphql-java-kickstart:graphiql-spring-boot-starter:${LIB_GRAPHQL_SPRING_BOOT_VER}")
 // https://mvnrepository.com/artifact/io.projectreactor/reactor-core
     implementation("io.projectreactor:reactor-core:3.4.1")
+    implementation("io.projectreactor:reactor-tools")
+
     implementation("io.r2dbc:r2dbc-postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
