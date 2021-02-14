@@ -1,5 +1,9 @@
 plugins {
     java
+    kotlin("plugin.allopen") version "1.3.61"
+    kotlin("plugin.jpa") version "1.3.61"
+    kotlin("jvm") version "1.4.21"
+    kotlin("plugin.spring") version "1.4.21"
 }
 
 repositories {
@@ -25,6 +29,8 @@ dependencies {
 // https://mvnrepository.com/artifact/io.projectreactor/reactor-core
     implementation("io.projectreactor:reactor-core:3.4.1")
     implementation("io.projectreactor:reactor-tools")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     implementation("io.r2dbc:r2dbc-postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
