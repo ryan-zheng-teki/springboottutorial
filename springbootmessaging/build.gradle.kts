@@ -15,4 +15,5 @@ dependencies {
     implementation("org.springframework.data:spring-data-cassandra")
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.11.1")
     implementation("com.google.guava:guava:11.0.2")
+    implementation("org.springframework.boot:spring-boot-starter-security")
 }
