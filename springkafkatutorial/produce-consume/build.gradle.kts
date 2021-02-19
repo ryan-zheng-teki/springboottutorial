@@ -2,6 +2,7 @@ plugins {
     java
     id("com.google.cloud.tools.jib") version("2.7.1")
     id("com.github.johnrengelman.shadow") version("4.0.4")
+    kotlin("jvm") version "1.4.30"
 }
 
 
@@ -16,6 +17,8 @@ dependencies {
     implementation("org.apache.kafka:kafka-clients:2.5.0")
     implementation("io.confluent:kafka-streams-avro-serde:5.5.0")
     implementation("com.sksamuel.avro4s:avro4s-core_2.13:4.0.4")
+    // https://mvnrepository.com/artifact/org.apache.kafka/kafka
+
     // presentation boiler plate
     implementation("com.lihaoyi:cask_2.13:0.7.8")
     implementation("ch.qos.logback:logback-classic:1.2.3")
@@ -23,4 +26,5 @@ dependencies {
     implementation("com.nrinaudo:kantan.csv-generic_2.13:0.6.1")
     implementation("com.nrinaudo:kantan.csv-java8_2.13:0.6.1")
     implementation("com.nrinaudo:kantan.csv-enumeratum_2.13:0.6.1")
+    implementation(kotlin("stdlib-jdk8"))
 }
