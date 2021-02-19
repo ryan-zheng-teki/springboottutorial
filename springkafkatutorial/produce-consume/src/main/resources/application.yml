@@ -1,9 +1,10 @@
-bootstrap
-  servers = "localhost:29092"
-  schema.registry.url = "http://localhost:8081"
-    schema.registry.url = ${?SCHEMA_REGISTRY_URL}
+bootstrap:
+  servers: "localhost:29092"
+  schema:
+    registry:
+      url: "http://localhost:8081"
 
-    producer {
+  producer {
     client-config {
     acks = all
     client.id = scala-tutorial

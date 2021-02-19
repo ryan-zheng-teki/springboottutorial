@@ -16,6 +16,9 @@ import javax.annotation.PreDestroy;
 @Slf4j
 @SpringBootApplication
 public class SpringWebFluxTutorial {
+    public void SpringWebFluxTutorial() {
+        System.out.println("instantiating bean with default constructor");
+    }
     public static void main(String[] args) {
         ReactorDebugAgent.init();
         SpringApplication.run(SpringWebFluxTutorial.class, args);
