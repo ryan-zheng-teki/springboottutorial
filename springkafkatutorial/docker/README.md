@@ -1,8 +1,12 @@
-clone https://github.com/wurstmeister/kafka-docker.git to local machine. Then start a single
-broker with zookeeper by running
+create the data volumns for zookeeper and kafka
 
-docker-compose -f docker-compose-single-broker.yml up
+`mkdir -p data/vol1/zk-data`
 
-Commands 
-./broker-list.sh  list all the started kafka brokers
+`mkdir -p data/vol2/zk-txn-logs`
+
+`mkdir -p data/vol3/kafka-data`
+
+###### Kafka commands
+
+Commands ./broker-list.sh list all the started kafka brokers
 

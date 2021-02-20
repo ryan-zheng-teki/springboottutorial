@@ -1,4 +1,5 @@
 package com.qiusuo.schema
+import kotlinx.serialization.Serializable
 
-class Book {
-}
+@Serializable
+data class Book(val isoNumber: String, val title: String)

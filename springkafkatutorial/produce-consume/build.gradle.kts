@@ -3,6 +3,7 @@ plugins {
     id("com.google.cloud.tools.jib") version("2.7.1")
     id("com.github.johnrengelman.shadow") version("4.0.4")
     kotlin("jvm") version "1.4.30"
+    kotlin("plugin.serialization") version "1.4.0"
 }
 
 
@@ -17,6 +18,8 @@ dependencies {
     implementation("org.apache.kafka:kafka-clients:2.5.0")
     implementation("io.confluent:kafka-streams-avro-serde:5.5.0")
     implementation("com.sksamuel.avro4s:avro4s-core_2.13:4.0.4")
+    implementation("org.springframework.kafka:spring-kafka")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0")
     // https://mvnrepository.com/artifact/org.apache.kafka/kafka
 
     // presentation boiler plate
