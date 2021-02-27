@@ -1,9 +1,13 @@
 version: "3.7"
 services:
-        redis:
-                container_name: "qiusuo-redis"
-                image: "redis:5.0"
-                networks:
-                        - qiusuo-cluster
-                ports:
-                        - "6479:6379"
+  redis:
+    container_name: "qiusuo-redis"
+    image: "redis:5.0"
+    ports:
+      - "6479:6379"
+    networks:
+      - springtutorial
+
+networks:
+  springtutorial:
+    name: springtutorial
