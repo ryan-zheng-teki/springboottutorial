@@ -3,6 +3,7 @@
  */
 plugins {
     java
+    id("com.qiusuo.common")
 }
 dependencies {
     implementation("org.kie:kie-api:6.2.0.Final")

@@ -3,6 +3,7 @@
  */
 plugins {
     java
+    id("com.qiusuo.common")
 }
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")

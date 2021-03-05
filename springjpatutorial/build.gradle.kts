@@ -1,7 +1,8 @@
 plugins {
     java
-    kotlin("jvm") version "1.4.31"
+    kotlin("jvm")
     kotlin("plugin.allopen") version "1.3.61"
+    id("com.qiusuo.common")
 }
 
 group = "com.qiusuo"

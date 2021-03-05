@@ -4,6 +4,7 @@
 
 plugins {
     java
+    id("com.qiusuo.common")
 }
 dependencies {
     implementation("org.springframework.data:spring-data-redis")

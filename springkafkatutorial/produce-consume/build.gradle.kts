@@ -2,7 +2,7 @@ plugins {
     java
     id("com.google.cloud.tools.jib") version("2.7.1")
     id("com.github.johnrengelman.shadow") version("4.0.4")
-    kotlin("jvm") version "1.4.30"
+    kotlin("jvm")
     kotlin("plugin.serialization") version "1.4.0"
 }
 

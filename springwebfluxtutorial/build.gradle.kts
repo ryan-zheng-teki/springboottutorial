@@ -2,8 +2,9 @@ plugins {
     java
     kotlin("plugin.allopen") version "1.3.61"
     kotlin("plugin.jpa") version "1.3.61"
-    kotlin("jvm") version "1.4.21"
+    kotlin("jvm")
     kotlin("plugin.spring") version "1.4.21"
+    id("com.qiusuo.common")
 }
 
 repositories {
