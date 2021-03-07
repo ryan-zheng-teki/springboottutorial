@@ -1,11 +1,16 @@
 package com.qiusuo
 
-import org.gradle.api.Action
+import io.spring.gradle.dependencymanagement.DependencyManagementPlugin
+import io.spring.gradle.dependencymanagement.internal.dsl.StandardDependencyManagementExtension
 import org.gradle.api.Project
-import org.gradle.api.publish.maven.plugins.MavenPublishPlugin
-import org.gradle.plugin.devel.plugins.JavaGradlePluginPlugin
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
-val springCloudVersion = "Hoxton.SR8"
-
+const val springCloudVersion = "Hoxton.SR8"
 internal fun Project.configurePlugins() {
+    pluginManager.apply(SpringBootPlugin::class.java)
+    pluginManager.apply(DependencyManagementPlugin::class.java)
+    extensions.getByType(StandardDependencyManagementExtension::class.java).imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
+    }
 }
+

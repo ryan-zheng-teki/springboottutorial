@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
 class PostController(val postRepository: PostRepository) {
-    
     @GetMapping("/hello")
     fun posts(): String {
         return "blog"
