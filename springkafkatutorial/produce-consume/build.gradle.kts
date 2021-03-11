@@ -1,5 +1,4 @@
 plugins {
-    java
     id("com.google.cloud.tools.jib") version("2.7.1")
     id("com.github.johnrengelman.shadow") version("4.0.4")
     kotlin("jvm")
@@ -18,7 +17,7 @@ dependencies {
     implementation("org.apache.kafka:kafka-clients:2.5.0")
     implementation("io.confluent:kafka-streams-avro-serde:5.5.0")
     implementation("com.sksamuel.avro4s:avro4s-core_2.13:4.0.4")
-    implementation("org.springframework.kafka:spring-kafka")
+    implementation(group="org.springframework.kafka", name="spring-kafka", version="2.6.6")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0")
     // https://mvnrepository.com/artifact/org.apache.kafka/kafka
 
