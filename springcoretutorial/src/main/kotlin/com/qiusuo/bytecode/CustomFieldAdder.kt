@@ -19,7 +19,7 @@ class TestClass {
     }
 }
 
-class CustomFieldAdder(val access: Int, val name: String, val fieldType: String, val signature: String?, val value: Any, val cv: ClassVisitor, val api: Int): ClassVisitor(api, cv) {
+class CustomFieldAdder(val access: Int, val name: String, val fieldType: String, val signature: String?, val value: Int, val cv: ClassVisitor, val api: Int): ClassVisitor(api, cv) {
     var isFieldPresent = false
     override fun visitField(access: Int, name: String?, desc: String?, signature: String?, value: Any?): FieldVisitor? {
         if(name.equals(this.name)) {
