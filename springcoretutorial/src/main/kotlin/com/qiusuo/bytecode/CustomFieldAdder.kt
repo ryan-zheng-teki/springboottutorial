@@ -13,7 +13,7 @@ class Foo(val name: String) {
     }
 }
 
-class TestClass(val name: String) {
+class TestClass {
     fun testMethod() {
         val foo: Foo = Foo("yogi")
     }
@@ -30,7 +30,7 @@ class CustomFieldAdder(val access: Int, val name: String, val fieldType: String,
 
     override fun visitEnd() {
         if (!isFieldPresent) {
-            val fv = cv.visitField(access, name, fieldType, null, 0)
+            val fv = cv.visitField(access, name, fieldType, null, value)
             fv?.visitEnd()
         }
         cv.visitEnd()
