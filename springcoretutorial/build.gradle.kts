@@ -1,5 +1,4 @@
 plugins {
-    java
     kotlin("jvm")
     id("com.qiusuo.common")
 }
@@ -14,3 +13,5 @@ dependencies {
     implementation(group="org.ow2.asm", name="asm", version="9.1")
     implementation(group="org.ow2.asm", name="asm-util", version="9.1")
 }
+
+tasks.bootJar.get().enabled = false
