@@ -14,7 +14,6 @@ internal fun Project.configurePlugins() {
     pluginManager.apply(DependencyManagementPlugin::class.java)
     pluginManager.apply(JavaPlugin::class.java)
     pluginManager.apply(ApplicationPlugin::class.java)
-    pluginManager.apply(MavenPlugin::class.java)
     extensions.getByType(StandardDependencyManagementExtension::class.java).imports {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
     }

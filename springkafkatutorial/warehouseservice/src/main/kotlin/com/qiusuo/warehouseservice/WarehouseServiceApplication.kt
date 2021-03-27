@@ -1,0 +1,6 @@
+package com.qiusuo.warehouseservice
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+
+@SpringBootApplication
+open class WarehouseServiceApplication

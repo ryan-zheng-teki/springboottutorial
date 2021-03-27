@@ -1,21 +1,21 @@
 plugins {
-    id 'java'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+    id("com.qiusuo.common")
+    kotlin("jvm")
 }
 
-
-repositories {
-    mavenCentral()
-}
+group = "com.qiusuo"
+version = "0.0.1-SNAPSHOT"
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
 }
 
-compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+configure<JavaPluginConvention> {
+    sourceCompatibility = JavaVersion.VERSION_11
 }
-compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions.jvmTarget = "11"
 }
