@@ -8,6 +8,7 @@ import org.springframework.context.event.EventListener
 
 @SpringBootApplication
 open class CSVProducer {
+    
     @EventListener(ApplicationReadyEvent::class)
     open fun createTopic() {
         println("hello world, I have just started up")

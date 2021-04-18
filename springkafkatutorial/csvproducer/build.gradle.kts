@@ -1,6 +1,7 @@
 plugins {
     id("com.qiusuo.common")
     kotlin("jvm")
+    id("org.jetbrains.kotlin.plugin.spring") version "1.4.32"
 }
 
 group = "com.qiusuo"
