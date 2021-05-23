@@ -14,4 +14,5 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     testCompile("junit", "junit", "4.12")
+    implementation("io.github.microutils:kotlin-logging-jvm:2.0.6")
 }
