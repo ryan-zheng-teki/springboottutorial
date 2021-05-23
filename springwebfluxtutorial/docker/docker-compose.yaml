@@ -2,11 +2,11 @@ version: '3'
 services:
   database:
     image: "postgres" # use latest official postgres version
-    container_name: confluence-postgres
+    container_name: qiusuo-postgres
     environment:
-      POSTGRES_USER: confluence
-      POSTGRES_PASSWORD: confluence
-      POSTGRES_DB: confluence
+      POSTGRES_USER: qiusuo
+      POSTGRES_PASSWORD: qiusuo
+      POSTGRES_DB: qiusuo
     ports:
       - "5432:5432"
     volumes:
