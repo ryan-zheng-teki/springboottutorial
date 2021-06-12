@@ -17,7 +17,7 @@ val LIB_GRAPHQL_SPRING_BOOT_VER = "11.0.0"
 
 dependencies {
     // Lombok
-    compileOnly("org.projectlombok:lombok:${lombokVersion}")
+    compileOnly("org.projectlombok:lombok:$lombokVersion}")
     annotationProcessor("org.projectlombok:lombok:${lombokVersion}")
     implementation("org.projectlombok:lombok:${lombokVersion}")
 
