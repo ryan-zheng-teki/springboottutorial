@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.r2dbc.connectionfactory.init.ConnectionFactoryInitializer;
 import org.springframework.data.r2dbc.connectionfactory.init.ResourceDatabasePopulator;
-import reactor.core.publisher.Hooks;
 import reactor.tools.agent.ReactorDebugAgent;
 
 import javax.annotation.PreDestroy;
@@ -19,6 +18,7 @@ public class SpringWebFluxTutorial {
     public void SpringWebFluxTutorial() {
         System.out.println("instantiating bean with default constructor");
     }
+
     public static void main(String[] args) {
         ReactorDebugAgent.init();
         SpringApplication.run(SpringWebFluxTutorial.class, args);
@@ -41,7 +41,6 @@ public class SpringWebFluxTutorial {
             Thread.sleep(5 * 1000);
         } catch (InterruptedException e) {
             log.error("", e);
-            ;
         }
         log.info("###STOP FROM THE LIFECYCLE###");
     }
