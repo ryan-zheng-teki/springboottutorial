@@ -26,6 +26,7 @@ dependencies {
     implementation("com.graphql-java-kickstart:graphql-kickstart-spring-boot-starter-tools:$LIB_GRAPHQL_SPRING_BOOT_VER")
     implementation("com.graphql-java-kickstart:graphql-kickstart-spring-boot-starter-webflux:$LIB_GRAPHQL_SPRING_BOOT_VER")
     implementation("com.graphql-java-kickstart:graphiql-spring-boot-starter:${LIB_GRAPHQL_SPRING_BOOT_VER}")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.0.0")
 // https://mvnrepository.com/artifact/io.projectreactor/reactor-core
     implementation("io.projectreactor:reactor-core:3.4.1")
     implementation("io.projectreactor:reactor-tools")
