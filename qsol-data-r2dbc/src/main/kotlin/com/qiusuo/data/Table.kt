@@ -1,7 +1,7 @@
 package com.qiusuo.data
 
 /**
- * Define a table cache. The table contains the column names and values
+ * Define a table. The table contains the column names and values
  * of the columns
  */
 class Table(var name: String) {
