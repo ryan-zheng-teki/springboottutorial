@@ -1,1 +1,2 @@
 debug: false
+  FileAppender(/var/log/communityservice/communityservice.log)

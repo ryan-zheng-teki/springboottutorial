@@ -11,3 +11,4 @@ services:
       - "5432:5432"
     volumes:
       - ../data:/var/lib/postgresql/data/ # persist data even if container shuts down
+      - ../hello:/home/hello

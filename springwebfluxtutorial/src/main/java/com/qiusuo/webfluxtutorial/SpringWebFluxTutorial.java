@@ -16,7 +16,7 @@ import javax.annotation.PreDestroy;
 @SpringBootApplication
 public class SpringWebFluxTutorial {
     public void SpringWebFluxTutorial() {
-        System.out.println("instantiating bean with default constructor");
+        log.info("instantiating bean with default constructor");
     }
 
     public static void main(String[] args) {
@@ -24,13 +24,18 @@ public class SpringWebFluxTutorial {
         SpringApplication.run(SpringWebFluxTutorial.class, args);
     }
 
+    /**
+     * Why connectionFactory is shown as redundant
+     *
+     * @param connectionFactory
+     * @return
+     */
     @Bean
     ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
-        System.out.println("Going to initiate database table");
         ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
         initializer.setConnectionFactory(connectionFactory);
-        //initializer.setDatabasePopulator(new ResourceDatabasePopulator(new ClassPathResource("schema.sql")));
-        initializer.setDatabaseCleaner(new ResourceDatabasePopulator(new ClassPathResource("schemaCleaner.sql")));
+        initializer.setDatabasePopulator(new ResourceDatabasePopulator(new ClassPathResource("schema.sql")));
+        //initializer.setDatabaseCleaner(new ResourceDatabasePopulator(new ClassPathResource("schemaCleaner.sql")));
         return initializer;
     }
 
