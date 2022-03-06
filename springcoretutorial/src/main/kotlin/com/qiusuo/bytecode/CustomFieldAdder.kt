@@ -15,7 +15,17 @@ class Foo(val name: String) {
 
 class TestClass {
     fun testMethod() {
-        val foo: Foo = Foo("yogi")
+        val foo = Foo("yogi")
+        var fooClass =  foo.javaClass
+
+        var hua = Hua()
+        var  huaClass = hua.javaClass
+        foo.foo()
+    }
+    class  Hua {
+        fun testMethod() {
+            print("hello")
+        }
     }
 }
 

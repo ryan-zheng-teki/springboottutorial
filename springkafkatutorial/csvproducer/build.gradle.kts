@@ -15,7 +15,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation(kotlin("stdlib"))
     implementation("org.springframework.kafka:spring-kafka")
-    testCompile("junit", "junit", "4.12")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
