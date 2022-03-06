@@ -1,5 +1,6 @@
 ###### ###############Kafka Tutorial###########
 
+Non-Docker Version
 (1) Download kafka binary from the following URL
 https://kafka.apache.org/downloads download the scala version. Zookeeper is already included in it. Unzip and  
 Start zooKeeper\
