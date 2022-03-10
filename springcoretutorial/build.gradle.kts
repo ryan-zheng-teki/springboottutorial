@@ -11,6 +11,7 @@ dependencies {
     implementation("org.springframework:spring-beans")
     implementation("org.springframework:spring-context")
 
+    implementation("javassist:javassist:3.12.1.GA")
     implementation("io.github.microutils:kotlin-logging-jvm:2.0.6")
     implementation(group = "org.projectlombok", name = "lombok", version = "1.18.16")
     implementation(group = "org.slf4j", name = "slf4j-simple", version = "1.6.1")

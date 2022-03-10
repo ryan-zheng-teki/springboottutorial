@@ -31,3 +31,5 @@ include("springkafkatutorial:erpservice")
 findProject(":springkafkatutorial:erpservice")?.name = "erpservice"
 include("springkafkatutorial:erpapigateway:erpapiadator")
 findProject(":springkafkatutorial:erpapigateway:erpapiadator")?.name = "erpapiadator"
+include("springcoretutorial:javaagenttutorial")
+findProject(":springcoretutorial:javaagenttutorial")?.name = "javaagenttutorial"
