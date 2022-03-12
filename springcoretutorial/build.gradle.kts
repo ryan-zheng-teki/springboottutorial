@@ -20,4 +20,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
 }
 
-tasks.bootJar.get().enabled = false
+
+tasks.bootJar {
+    mainClass.set("com.qiusuo.bytecode.CustomFieldAdderDemoKt")
+}
+

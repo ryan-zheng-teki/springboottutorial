@@ -10,3 +10,12 @@ allprojects {
     group = "com.qiusuo"
     version = "0.0.1-SNAPSHOT"
 }
+
+gradle.taskGraph.whenReady {
+    gradle.taskGraph.allTasks.forEach {
+        if(it.project.name.equals("javaagenttutorial") && it.name.equals("bootJar")) {
+            println("this is crazy")
+            it.onlyIf { false }
+        }
+    }
+}

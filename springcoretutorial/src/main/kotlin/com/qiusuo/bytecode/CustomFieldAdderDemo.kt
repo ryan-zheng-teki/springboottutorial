@@ -9,7 +9,7 @@ import java.net.URLClassLoader
 import java.nio.file.Path
 
 const val CLASS_NAME: String = "com.qiusuo.bytecode.TestClass"
-class TestClassWriter: URLClassLoader {
+class TestClassWriter(urls: Array<URL>) : URLClassLoader(urls) {
 
     fun run() {
         val modifiedClass: Class<*> = loadClass(CLASS_NAME)
@@ -34,14 +34,9 @@ class TestClassWriter: URLClassLoader {
         }
         return loadedClass
     }
-
-    constructor(urls: Array<URL>): super(urls)
-
 }
 
+class Application
 fun main(args: Array<String>) {
-    val url = Path.of("/home/ryan/Learning/springboottutorial/springcoretutorial/build/classes/kotlin/main").toUri().toURL()
-    var urls = arrayOf(url)
-    val testClassWriter = TestClassWriter(urls)
-    testClassWriter.run()
+    println("In main function")
 }

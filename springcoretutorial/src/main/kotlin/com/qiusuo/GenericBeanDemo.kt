@@ -8,7 +8,7 @@ data class ABean(val name: String)
 
 
 fun generateFactoryBean() {
-    val genericBeanDefinition: GenericBeanDefinition = GenericBeanDefinition()
+    var genericBeanDefinition: GenericBeanDefinition = GenericBeanDefinition()
     genericBeanDefinition.beanClass = ABean::class.java
     val context: DefaultListableBeanFactory = DefaultListableBeanFactory()
     context.registerBeanDefinition("aBean", genericBeanDefinition)

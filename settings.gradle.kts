@@ -33,3 +33,5 @@ include("springkafkatutorial:erpapigateway:erpapiadator")
 findProject(":springkafkatutorial:erpapigateway:erpapiadator")?.name = "erpapiadator"
 include("springcoretutorial:javaagenttutorial")
 findProject(":springcoretutorial:javaagenttutorial")?.name = "javaagenttutorial"
+
+println("hello root")

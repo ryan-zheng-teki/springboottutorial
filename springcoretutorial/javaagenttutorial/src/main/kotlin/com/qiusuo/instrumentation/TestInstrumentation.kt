@@ -15,14 +15,16 @@ private val LOGGER = KotlinLogging.logger {}
 
 const val CLASS_NAME: String = "com.qiusuo.bytecode.TestClass"
 
-class TestInstrumentation {
   fun premain(
-    agentArgs: String, inst: Instrumentation
+    agentArgs: String?, inst: Instrumentation
   ) {
     LOGGER.info("[Agent] In premain method")
     val classObj: Class<*>? = preloadClass()
+    System.out.println(classObj)
     if (classObj != null) {
       transform(classObj, classObj.classLoader, inst)
+    } else {
+      LOGGER.info("class not found")
     }
   }
 
@@ -61,8 +63,6 @@ class TestInstrumentation {
       )
     }
   }
-}
-
 /**
  * There are different bytecode manipulators. cglib, javaassist, bytebuddy. Bytebuddy and cglib both use ASM as the library
  * to perform the job. classFile -> bytecode ->
