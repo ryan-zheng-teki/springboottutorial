@@ -36,7 +36,6 @@ class TestClassWriter(urls: Array<URL>) : URLClassLoader(urls) {
     }
 }
 
-class Application
 fun main(args: Array<String>) {
     println("In main function")
 }

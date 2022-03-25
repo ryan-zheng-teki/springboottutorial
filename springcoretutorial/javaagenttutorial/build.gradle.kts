@@ -26,34 +26,6 @@ tasks.jar {
         attributes["Implementation-Title"] = "TestInstrumentation"
         attributes["Implementation-Version"] = rootProject.version
     }
-
-    from(configurations.runtimeClasspath.get().map({ if (it.isDirectory) {
-        println(it.path)
-        it
-    }else
-    {
-        zipTree(it)
-    }}))
-}
-
-val fatJar = task("fatJar", type = Jar::class) {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-    baseName = "${project.name}-fat"
-    manifest {
-        attributes["Premain-Class"] = "com.qiusuo.instrumentation.TestInstrumentationKt"
-        attributes["Can-Redefine-Classes"] = true
-        attributes["Can-Retransform-Classes"] = true
-        attributes["Set-Native-Method-Prefix"] = true
-        attributes["Implementation-Title"] = "TestInstrumentation"
-        attributes["Implementation-Version"] = rootProject.version
-    }
-    from(configurations.runtimeClasspath.get().map({ if (it.isDirectory) {
-        println(it.path)
-        it
-    }else
-    {
-        zipTree(it)
-    }}))
-    with(tasks.jar.get() as CopySpec)
+    from(configurations.runtimeClasspath.get().map({ if (it.isDirectory) it else zipTree(it) }))
 }
 

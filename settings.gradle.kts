@@ -25,6 +25,7 @@ include("qsol-data-reactive-spring-boot-starter")
 include("qsol-data-reactive-spring-boot-autoconfigure")
 include("qsol-jni-programming")
 include("ERPService")
+include("springbootcache")
 include("springkafkatutorial:erpapigateway")
 findProject(":springkafkatutorial:erpapigateway")?.name = "erpapigateway"
 include("springkafkatutorial:erpservice")
