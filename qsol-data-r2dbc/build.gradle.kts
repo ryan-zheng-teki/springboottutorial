@@ -1,6 +1,4 @@
 plugins {
-    java
-    kotlin("jvm")
     id("com.qiusuo.common")
 }
 

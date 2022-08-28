@@ -2,14 +2,18 @@ plugins {
     `kotlin-dsl`
 }
 
+
+
 repositories {
     mavenCentral()
-    jcenter()
     maven { setUrl("https://plugins.gradle.org/m2/") }
+    maven { setUrl("https://repo.spring.io/snapshot") }
+    gradlePluginPortal()
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
-    implementation("io.spring.dependency-management:io.spring.dependency-management.gradle.plugin:1.0.10.RELEASE")
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:2.6.4")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${project.properties["kotlin-gradle-plugin.version"]}")
+    implementation("io.spring.dependency-management:io.spring.dependency-management.gradle.plugin:${project.properties["dependency.manager.plugin.version"]}")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:${project.properties["spring.boot.gradle.plugin.version"]}")
+
 }

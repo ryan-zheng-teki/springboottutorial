@@ -1,6 +1,4 @@
 plugins {
-    java
-    kotlin("jvm")
     kotlin("plugin.allopen") version "1.3.61"
     id("com.qiusuo.common")
 }

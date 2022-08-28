@@ -1,5 +1,3 @@
 package com.qiusuo.orderservice.model
 
-class Order {
-
-}
+class Order {}

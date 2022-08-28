@@ -1,6 +1,5 @@
 plugins {
     id("com.qiusuo.common")
-    kotlin("jvm")
 }
 
 group = "com.qiusuo"

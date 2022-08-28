@@ -1,14 +1,10 @@
 plugins {
     id("com.qiusuo.common")
-    kotlin("plugin.allopen") version "1.3.61"
-    kotlin("plugin.jpa") version "1.3.61"
-    kotlin("plugin.spring") version "1.4.21"
+    kotlin("plugin.allopen") version "1.6.10"
+    kotlin("plugin.jpa") version "1.6.10"
+    kotlin("plugin.spring") version "1.6.10"
 }
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
 
 dependencies {
     compileOnly("org.projectlombok:lombok:${project.properties["lombokVersion"]}")

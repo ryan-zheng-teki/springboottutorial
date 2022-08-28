@@ -1,0 +1,7 @@
+type Order {
+    productName: String!
+}
+
+type Mutation {
+    createOrder(productName: String!): Order!
+}

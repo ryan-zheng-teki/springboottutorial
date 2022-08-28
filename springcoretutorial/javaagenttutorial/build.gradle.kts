@@ -2,7 +2,6 @@ import org.gradle.internal.impldep.org.eclipse.jgit.lib.ObjectChecker.type
 
 plugins {
     id("com.qiusuo.common")
-    kotlin("jvm")
 }
 
 dependencies {
