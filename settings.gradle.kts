@@ -40,3 +40,5 @@ include("springcoretutorial:javaagenttutorial")
 include("springnativetutorial")
 include("springkafkatutorial:event-core")
 findProject(":springkafkatutorial:event-core")?.name = "event-core"
+include("springkafkatutorial:config-server")
+findProject(":springkafkatutorial:config-server")?.name = "config-server"
