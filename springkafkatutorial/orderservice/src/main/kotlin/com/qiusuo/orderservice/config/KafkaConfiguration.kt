@@ -13,7 +13,7 @@ import org.springframework.kafka.core.KafkaAdmin
 class KafkaConfiguration {
     val ORDER_CREATED_TOPIC = "OrderCreated"
 
-    
+
     @Bean
     fun kafkaAdmin(): KafkaAdmin {
         val configs: MutableMap<String, Any> = HashMap()
@@ -29,4 +29,6 @@ class KafkaConfiguration {
             .config(TopicConfig.COMPRESSION_TYPE_CONFIG, "zstd")
             .build()
     }
+    
+
 }
