@@ -8,10 +8,8 @@ import reactor.core.publisher.Mono
 
 @Service
 class BookService(private val bookRepository: BookRepository) {
-    fun createBook(isoNumber: String?, title: String?): Mono<Book> {
-        val book = Book(isoNumber,
-            title!!, true
-        )
+    fun createBook(isoNumber: String, title: String): Mono<Book> {
+        val book = Book(isoNumber, title)
         return bookRepository.save(book)
     }
 

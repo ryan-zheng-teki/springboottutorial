@@ -1,6 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.6.10-RC"
-    java
+    id("com.qiusuo.common")
 }
 
 group = "org.example"
@@ -11,7 +10,6 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }

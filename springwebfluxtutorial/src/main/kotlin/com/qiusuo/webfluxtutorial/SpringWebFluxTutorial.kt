@@ -2,6 +2,8 @@ package com.qiusuo.webfluxtutorial
 
 import io.r2dbc.spi.ConnectionFactory
 import lombok.extern.slf4j.Slf4j
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Bean
@@ -11,9 +13,13 @@ import org.springframework.data.r2dbc.connectionfactory.init.ResourceDatabasePop
 import reactor.tools.agent.ReactorDebugAgent
 import javax.annotation.PreDestroy
 
+val log: Logger = LoggerFactory.getLogger(SpringWebFluxTutorial.javaClass)
+
+
 @Slf4j
 @SpringBootApplication
 class SpringWebFluxTutorial {
+
     @Bean
     fun initializer(connectionFactory: ConnectionFactory?): ConnectionFactoryInitializer {
         val initializer = ConnectionFactoryInitializer()
@@ -25,13 +31,13 @@ class SpringWebFluxTutorial {
 
     @PreDestroy
     fun onExit() {
-        SpringWebFluxTutorial.log.info("###STOPing###")
+        log.info("###STOPing###")
         try {
             Thread.sleep((5 * 1000).toLong())
         } catch (e: InterruptedException) {
-            SpringWebFluxTutorial.log.error("", e)
+            log.error("", e)
         }
-        SpringWebFluxTutorial.log.info("###STOP FROM THE LIFECYCLE###")
+        log.info("###STOP FROM THE LIFECYCLE###")
     }
 
     companion object {
@@ -43,6 +49,6 @@ class SpringWebFluxTutorial {
     }
 
     init {
-        SpringWebFluxTutorial.log.info("instantiating bean with default constructor")
+        log.info("instantiating bean with default constructor")
     }
 }

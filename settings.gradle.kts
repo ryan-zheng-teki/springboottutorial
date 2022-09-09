@@ -39,6 +39,7 @@ include("springkafkatutorial:erpapigateway:erpapiadator")
 include("springcoretutorial:javaagenttutorial")
 include("springnativetutorial")
 include("springkafkatutorial:event-core")
+include("springkafkatutorial:analysis-service")
 findProject(":springkafkatutorial:event-core")?.name = "event-core"
 include("springkafkatutorial:config-server")
 findProject(":springkafkatutorial:config-server")?.name = "config-server"
