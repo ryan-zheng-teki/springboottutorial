@@ -1,3 +1,3 @@
 package com.qiusuo.orderservice.model
 
-class Order(val businessToken: Long, val productNumber: String, val id: Long)
+class Order(val businessToken: String, val productNumber: String, val orderId: String)
